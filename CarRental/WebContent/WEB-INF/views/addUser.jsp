@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h1>Add user for</h1>
-	<form:form  modelAttribute="newUser" action="users/addUser" method="post">
+	<form:form  modelAttribute="newUser" action="/CarRental/users/addUser" method="post">
 		<fieldset>
 			<legend>Add new User</legend>
 			${insertionMessage}

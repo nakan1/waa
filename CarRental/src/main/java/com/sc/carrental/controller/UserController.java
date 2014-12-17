@@ -56,12 +56,12 @@ public class UserController {
 		
 		 userRepo.save(user);
 		
-		return "redirect:/addUser";
+		return "redirect:/users/addUser";
 	}
 	
 	
 	@RequestMapping()
-	public String getAll(Model model){
+	public String getAll(@ModelAttribute("newUser") User user, Model model){
 			model.addAttribute("listUsers", userRepo.findAll());
 		return "users";
 	}

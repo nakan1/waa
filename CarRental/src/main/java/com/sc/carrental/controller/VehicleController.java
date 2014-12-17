@@ -23,23 +23,23 @@ import com.sc.carrental.service.VehicleService;
 @Controller
 public class VehicleController {
 	
-	@Autowired(required=true)
+	/*@Autowired(required=true)
 	@Qualifier(value="vehicle")
 	 private VehicleService vehicle;
     
    
-  /*  public void setPersonService(PersonService ps){
+    public void setPersonService(PersonService ps){
         this.personService = ps;
-    }*/
+    }
     @Autowired(required=true)
 	private CategoryService category;
 	
-/*	@RequestMapping(value="/")
+	@RequestMapping(value="/")
 	public String getvehicleList(Model model)
 	{
 		model.addAttribute("vehicles",vehicle.getAllVehicel());
 		return "cars";
-	}*/
+	}
 	
 	
 	@RequestMapping(value = "/addCar", method = RequestMethod.GET)
@@ -68,6 +68,6 @@ public class VehicleController {
 		redirectatt.addFlashAttribute("message","Successfully added");
 	   	return "redirect:/cars";
 	}
-	
+	*/
 
 }

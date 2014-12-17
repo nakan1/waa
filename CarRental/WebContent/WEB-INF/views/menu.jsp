@@ -17,7 +17,7 @@
 <h4>Admin</h4>	
 <ul>
 <li><a href="cars/admin">Edit car</a></li>
-<li><a href="addUser">sing up</a></li>
+<li><a href="users/addUser">sing up</a></li>
 <li><a href="#">To be add</a></li>
 </ul>
 </body>

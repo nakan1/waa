@@ -50,6 +50,8 @@
 </form:form>
 <fieldset>
 <legend>List of all users</legend>
+<table>
+<th>UserName</th>
 	 <c:forEach items="${listUsers}" var="user">
         <tr>
             <td>${user.username}</td>
@@ -58,6 +60,7 @@
             <td><a href="<c:url value='/users/remove/${user.username}' />" >Delete</a></td>
         </tr>
     </c:forEach>
+  </table>  
  </fieldset>   
 
 </body>
