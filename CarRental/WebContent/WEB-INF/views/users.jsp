@@ -11,11 +11,12 @@
 </head>
 <body>
 <form:form  modelAttribute="newUser" action="/CarRental/users/addUser" method="post">
+<c:if test="${!empty newUser.username}">
 <fieldset>
 	<legend>Edit User</legend>
 	<table>
 		<tr>
-			<td><spring:message code="addUser.form.username.label"/></td> <td><form:input type="text" path="username" value="${user.username}"/></td> <td><form:errors path="username"/></td>
+			<td><spring:message code="addUser.form.username.label"/></td> <td><form:input type="text" path="username" value="${user.username}" readonly="true"/></td> <td><form:errors path="username"/></td>
 		</tr>
 		<tr>
 			<td><spring:message code="addUser.form.password.label"/></td> <td><form:input type="password" path="password" value="${user.password}"/></td> <td><form:errors path="password"/></td>
@@ -47,11 +48,11 @@
 		</table>
 		<input type="submit" value="Valid"/>
 </fieldset>
+</c:if>
 </form:form>
 <fieldset>
 <legend>List of all users</legend>
 <table>
-<th>UserName</th>
 	 <c:forEach items="${listUsers}" var="user">
         <tr>
             <td>${user.username}</td>

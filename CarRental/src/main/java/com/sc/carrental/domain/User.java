@@ -7,6 +7,8 @@ package com.sc.carrental.domain;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Collection;
+import java.util.List;
+
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -82,8 +84,9 @@ public class User implements Serializable {
     private String city;
     /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "userUsername")
     private Collection<Booking> bookingCollection;*/
-    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "userUsername")
-    private Collection<UserRoles> userRolesCollection;*/
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userUsername")
+    private Collection<UserRoles> userRolesCollection;
+
 
     public User() {
     }
@@ -187,16 +190,17 @@ public class User implements Serializable {
         this.bookingCollection = bookingCollection;
     }*/
 
-  /*  @XmlTransient
+    @XmlTransient
     public Collection<UserRoles> getUserRolesCollection() {
         return userRolesCollection;
     }
 
     public void setUserRolesCollection(Collection<UserRoles> userRolesCollection) {
         this.userRolesCollection = userRolesCollection;
-    }*/
-
-    @Override
+    }
+    
+    
+	@Override
     public int hashCode() {
         int hash = 0;
         hash += (username != null ? username.hashCode() : 0);

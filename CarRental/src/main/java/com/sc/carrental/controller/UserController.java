@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sc.carrental.domain.User;
+import com.sc.carrental.domain.UserRoles;
 import com.sc.carrental.repository.UserRepository;
+import com.sc.carrental.repository.UserRoleRepository;
 import com.sc.carrental.service.UserService;
 import com.sc.carrental.service.impl.UserServiceImpl;
 
@@ -37,6 +39,7 @@ public class UserController {
 	
 	@Autowired
 	private UserRepository userRepo;
+	private UserRoleRepository userRoleRepo;
 	
 	
 	//get sing
@@ -55,6 +58,17 @@ public class UserController {
 		 model.addAttribute("insertionMessage", "UserInserted");
 		
 		 userRepo.save(user);
+		 
+		 //ecreating list for of roles 
+		/* UserRoles userRoles = null;
+		 	List<String> listUserRole =  user.getRole();
+		 	for(String ur: listUserRole){
+		 		userRoles = new UserRoles();
+		 		userRoles.setRole(ur);
+		 		userRoleRepo.save(userRoles);
+		 	}*/
+		 	
+		 
 		
 		return "redirect:/users/addUser";
 	}

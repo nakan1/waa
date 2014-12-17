@@ -46,14 +46,14 @@
 		<tr>
 			<td><spring:message code="addUser.form.city.label"/></td> <td><form:input type="text" path="city"/></td> <td><form:errors path="city"/></td>
 		</tr>
-		<%-- <tr>
-			<td><form:input type="hidden" path="userRolesCollection" value="ROLE_USER"/>
-				<form:select  path="userRolesCollection">
-					<form:option value="ROLE_USER">User</form:option>
-					<form:option value="ROLE_ADMIN">ADMIN</form:option>
-				</form:select>
+		 <tr>
+			<td><%-- <form:input type="hidden" path="roleUs" value="ROLE_USER"/> --%>
+				<%-- <form:select  path="userRolesCollection">
+					<form:option value="ROLE_USER" label="User"/>
+					<form:option value="ROLE_ADMIN" label="ADMIN"/>
+				</form:select> --%>
 			</td>
-		</tr> --%>
+		</tr> 
 		
 		</table>
 		<input type="submit" value="Add User">
