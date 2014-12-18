@@ -1,31 +1,28 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package com.sc.carrental.domain;
 
 import java.io.Serializable;
-import java.math.BigInteger;
-import java.util.Collection;
-import java.util.List;
-
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author 984372
+ * @author Diarra
  */
 @Entity
 @Table(name = "user")
@@ -52,8 +49,9 @@ public class User implements Serializable {
     private String username;
     @Basic(optional = false)
     @NotNull
+    @Size(min = 1, max = 45)
     @Column(name = "password")
-    private BigInteger password;
+    private String password;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     @Size(max = 45)
     @Column(name = "email")
@@ -82,11 +80,9 @@ public class User implements Serializable {
     @Size(max = 45)
     @Column(name = "city")
     private String city;
-    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "userUsername")
-    private Collection<Booking> bookingCollection;*/
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userUsername")
-    private Collection<UserRoles> userRolesCollection;
-
+    @JoinColumn(name = "user_roles_userRolesId")
+    @ManyToOne
+    private UserRoles userrolesuserRolesId;
 
     public User() {
     }
@@ -95,7 +91,7 @@ public class User implements Serializable {
         this.username = username;
     }
 
-    public User(String username, BigInteger password, String phone) {
+    public User(String username, String password, String phone) {
         this.username = username;
         this.password = password;
         this.phone = phone;
@@ -109,11 +105,11 @@ public class User implements Serializable {
         this.username = username;
     }
 
-    public BigInteger getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(BigInteger password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -181,26 +177,15 @@ public class User implements Serializable {
         this.city = city;
     }
 
-  /*  @XmlTransient
-    public Collection<Booking> getBookingCollection() {
-        return bookingCollection;
+    public UserRoles getUserrolesuserRolesId() {
+        return userrolesuserRolesId;
     }
 
-    public void setBookingCollection(Collection<Booking> bookingCollection) {
-        this.bookingCollection = bookingCollection;
-    }*/
-
-    @XmlTransient
-    public Collection<UserRoles> getUserRolesCollection() {
-        return userRolesCollection;
+    public void setUserrolesuserRolesId(UserRoles userrolesuserRolesId) {
+        this.userrolesuserRolesId = userrolesuserRolesId;
     }
 
-    public void setUserRolesCollection(Collection<UserRoles> userRolesCollection) {
-        this.userRolesCollection = userRolesCollection;
-    }
-    
-    
-	@Override
+    @Override
     public int hashCode() {
         int hash = 0;
         hash += (username != null ? username.hashCode() : 0);
@@ -222,7 +207,7 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "com.test.java.User[ username=" + username + " ]";
+        return "com.sp.sinka.entity.User[ username=" + username + " ]";
     }
     
 }

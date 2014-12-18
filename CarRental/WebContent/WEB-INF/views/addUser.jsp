@@ -47,11 +47,23 @@
 			<td><spring:message code="addUser.form.city.label"/></td> <td><form:input type="text" path="city"/></td> <td><form:errors path="city"/></td>
 		</tr>
 		 <tr>
-			<td><%-- <form:input type="hidden" path="roleUs" value="ROLE_USER"/> --%>
-				<%-- <form:select  path="userRolesCollection">
+			<td> 
+			 <form:input type="hidden" path="userrolesuserRolesId.userRolesId" deseable="true" value="1"/>
+				
+				<%--  <form:select  path="userRolesCollection">
 					<form:option value="ROLE_USER" label="User"/>
 					<form:option value="ROLE_ADMIN" label="ADMIN"/>
-				</form:select> --%>
+				</form:select>  --%> 
+				
+				<%-- <form:label path="categoryvehicleCategoryCode.vehicleCategoryDescription">
+							<spring:message code="addCar.Form.category.Label" />
+					</form:label> <form:select path="categoryvehicleCategoryCode.vehicleCategoryCode">
+							<option value="Select" label=" - Select - "></option>
+							<c:forEach items="${listRoles}" var="role">
+								<form:option value="${category.vehicleCategoryCode}">${category.vehicleCategoryDescription}</form:option>
+
+							</c:forEach>
+					</form:select> <form:errors path="categoryvehicleCategoryCode"></form:errors> --%>
 			</td>
 		</tr> 
 		

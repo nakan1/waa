@@ -6,6 +6,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
@@ -44,6 +45,9 @@
  		</tr>
 		<tr>
 			<td><spring:message code="addUser.form.city.label"/></td> <td><form:input type="text" path="city" value="${user.city}"/></td> <td><form:errors path="city"/></td>
+		</tr>
+		<tr>
+			<td><spring:message code="addUser.form.roleid.label"/></td> <td><form:input type="text" path="userrolesuserRolesId.userRolesId" value="${user.userrolesuserRolesId.userRolesId}" /></td> 
 		</tr>
 		</table>
 		<input type="submit" value="Valid"/>

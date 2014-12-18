@@ -22,7 +22,7 @@ import com.sc.carrental.service.UserService;
 import com.sc.carrental.service.impl.UserServiceImpl;
 
 @Controller
-@RequestMapping(value="users")
+@RequestMapping(value="/users")
 public class UserController {
 	
 	
@@ -44,7 +44,7 @@ public class UserController {
 	
 	//get sing
 	@RequestMapping(value="addUser", method=RequestMethod.GET)
-	public String signup(@ModelAttribute("newUser") User user){
+	public String signup(@ModelAttribute("newUser") User user, Model model){
 		
 		return "addUser";
 	}
@@ -58,6 +58,7 @@ public class UserController {
 		 model.addAttribute("insertionMessage", "UserInserted");
 		
 		 userRepo.save(user);
+		 
 		 
 		 //ecreating list for of roles 
 		/* UserRoles userRoles = null;
@@ -74,7 +75,7 @@ public class UserController {
 	}
 	
 	
-	@RequestMapping()
+	@RequestMapping("/")
 	public String getAll(@ModelAttribute("newUser") User user, Model model){
 			model.addAttribute("listUsers", userRepo.findAll());
 		return "users";

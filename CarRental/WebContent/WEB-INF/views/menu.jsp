@@ -8,8 +8,9 @@
 </head>
 
 <body>
-<h4>Cars</h4>	
+<h4>Navigation</h4>	
 <ul>
+<li class="selected"><a href="/index">Home</a></li>
 <li><a href="cars">List of all car Available</a></li>
 <li><a href="#">To be add</a></li>
 </ul>
