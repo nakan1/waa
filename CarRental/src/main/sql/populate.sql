@@ -1,2 +1,0 @@
-INSERT INTO `user`(`username`, `password`, `email`, `firstName`, `lastName`, `gender`, `phone`, `address_line_1`, `address_line_2`, `city`) VALUES ([mamadou],[12345],[],[value-4],[value-5],[value-6],[33434343],[value-8],[value-9],[value-10])
-INSERT INTO `user_roles`(`userRolesId`, `user_username`, `ROLE`) VALUES ([value-1],[mamadou],[ROLE_ADMIN])

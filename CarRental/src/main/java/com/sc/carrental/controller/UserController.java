@@ -75,7 +75,7 @@ public class UserController {
 	}
 	
 	
-	@RequestMapping("/")
+	@RequestMapping("/edit")
 	public String getAll(@ModelAttribute("newUser") User user, Model model){
 			model.addAttribute("listUsers", userRepo.findAll());
 		return "users";

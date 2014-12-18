@@ -1,4 +1,4 @@
-package com.sc.carrental.service.impl;
+/*package com.sc.carrental.service.impl;
 
 import java.util.List;
 
@@ -47,3 +47,4 @@ public class VehicleServiceImpl implements VehicleService{
 		return vehicleDAO.getVehicleByCategory(category);
 	}
 }
+*/

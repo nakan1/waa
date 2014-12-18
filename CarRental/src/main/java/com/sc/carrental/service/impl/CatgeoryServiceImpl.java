@@ -1,4 +1,4 @@
-package com.sc.carrental.service.impl;
+/*package com.sc.carrental.service.impl;
 
 import java.util.List;
 
@@ -27,3 +27,4 @@ public class CatgeoryServiceImpl implements CategoryService {
 	
 
 }
+*/

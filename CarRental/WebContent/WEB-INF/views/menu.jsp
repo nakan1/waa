@@ -10,16 +10,16 @@
 <body>
 <h4>Navigation</h4>	
 <ul>
-<li class="selected"><a href="/index">Home</a></li>
-<li><a href="cars">List of all car Available</a></li>
-<li><a href="#">To be add</a></li>
+<li class="selected"><a href="/CarRental/index">Home</a></li>
+<li><a href="/CarRental/vehicle/">List of cars</a></li>
+<li><a href="/CarRental/users/addUser">sing up</a></li>
 </ul>
 
 <h4>Admin</h4>	
 <ul>
-<li><a href="cars/admin">Edit car</a></li>
-<li><a href="users/addUser">sing up</a></li>
-<li><a href="#">To be add</a></li>
+<li><a href="/CarRental/vehicle/adminDetails">Edit Cars</a></li>
+<li><a href="/CarRental/users/edit">Edit User</a></li>
+<li><a href="/CarRental/vehicle/addCar">Add Car</a></li>
 </ul>
 </body>
 </html>

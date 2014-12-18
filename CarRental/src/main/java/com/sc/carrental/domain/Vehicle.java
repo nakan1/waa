@@ -6,6 +6,7 @@ package com.sc.carrental.domain;
 
 import java.io.Serializable;
 import java.util.Collection;
+
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -17,10 +18,14 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+
+import org.hibernate.annotations.Columns;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -58,8 +63,23 @@ public class Vehicle implements Serializable {
     @JoinColumn(name = "category_vehicleCategoryCode", referencedColumnName = "vehicleCategoryCode")
     @ManyToOne(optional = false)
     private Category categoryvehicleCategoryCode;
+    @Transient
+    private MultipartFile imageFile;
+    @Column(name="vehicleImage")
+	private String  vehicleImage;
+    
+    @Column(name="make")
+    private String make;
 
-    public Vehicle() {
+    public String getMake() {
+		return make;
+	}
+
+	public void setMake(String make) {
+		this.make = make;
+	}
+
+	public Vehicle() {
     }
 
     public Vehicle(String registrationNumber) {
@@ -70,6 +90,22 @@ public class Vehicle implements Serializable {
         this.registrationNumber = registrationNumber;
         this.curentMileage = curentMileage;
     }
+
+    public String getVehicleImage() {
+		return vehicleImage;
+	}
+
+	public void setVehicleImage(String vehicleImage) {
+		this.vehicleImage = vehicleImage;
+	}
+
+	public MultipartFile getImageFile() {
+		return imageFile;
+	}
+
+	public void setImageFile(MultipartFile imageFile) {
+		this.imageFile = imageFile;
+	}
 
     public String getRegistrationNumber() {
         return registrationNumber;

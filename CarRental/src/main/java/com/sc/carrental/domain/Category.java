@@ -6,6 +6,8 @@ package com.sc.carrental.domain;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
+
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -13,6 +15,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -41,12 +44,13 @@ public class Category implements Serializable {
     @Column(name = "vehicleCategoryCode")
     private Integer vehicleCategoryCode;
     @Basic(optional = false)
-    @NotNull
+    //@NotNull
     @Size(min = 1, max = 225)
     @Column(name = "vehicleCategoryDescription")
     private String vehicleCategoryDescription;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "categoryvehicleCategoryCode")
-    private Collection<Vehicle> vehicleCollection;
+    @OneToMany
+    @JoinColumn(name="category_vehicleCategoryCode", referencedColumnName="vehicleCategoryCode")
+    private List<Vehicle> vehicleCollection;
 
     public Category() {
     }
@@ -77,11 +81,11 @@ public class Category implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Vehicle> getVehicleCollection() {
+    public List<Vehicle> getVehicleCollection() {
         return vehicleCollection;
     }
 
-    public void setVehicleCollection(Collection<Vehicle> vehicleCollection) {
+    public void setVehicleCollection(List<Vehicle> vehicleCollection) {
         this.vehicleCollection = vehicleCollection;
     }
 

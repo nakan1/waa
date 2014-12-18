@@ -1,4 +1,4 @@
-package com.sc.carrental.repository.Impl;
+/*package com.sc.carrental.repository.Impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,3 +37,4 @@ public class VehicleDAOImpl implements VehicleRepository {
 	}
 
 }
+*/
